@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================
+   Design tokens (EDITAR AQUÍ)
+   ========================= */
+:root {
+  /* Dark Premium Palette */
+  --bg: #07090D;
+  --surface: #0C1018;
+  /* Cards */
+  --surface-raised: #0F1623;
+  /* Elevation/Hover */
+
+  --text: #F5F7FF;
+  --text-secondary: rgba(245, 247, 255, 0.72);
+  --muted: rgba(245, 247, 255, 0.55);
+
+  --border: rgba(255, 255, 255, 0.08);
+
+  /* Accents */
+  --accent: #E4A001;
+  /* Primary Orange */
+  --accent-2: #190A81;
+  /* Secondary Blue */
+  --highlight: #F1D93B;
+
+  --ring: rgba(228, 160, 1, 0.5);
+  /* Focus ring based on primary accent */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui;
+}
+
+/* Global typography adjustments */
+body {
+  line-height: 1.6;
+  font-size: 16px;
+  /* Base size */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text);
+}
+
+p {
+  color: var(--text-secondary);
+  max-width: 76ch;
+  /* Readability */
+}
+
+/* Focus visible accesible */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
