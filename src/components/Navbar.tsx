@@ -98,19 +98,34 @@ export function Navbar() {
             {/* Mobile Drawer */}
             <div
                 className={clsx(
-                    "fixed inset-0 z-40 bg-[var(--bg)] transform transition-transform duration-300 lg:hidden flex flex-col pt-24 px-6",
+                    "fixed inset-0 z-[100] bg-[var(--bg)] transform transition-transform duration-300 lg:hidden flex flex-col",
                     isOpen ? "translate-x-0" : "translate-x-full"
                 )}
+                role="dialog"
+                aria-modal="true"
             >
-                <nav className="flex flex-col gap-6 text-lg">
+                <div className="flex justify-between items-center p-4 border-b border-[var(--border)]">
+                    <span className="font-bold text-xl text-[var(--text)]">Menú</span>
+                    <button
+                        onClick={() => setIsOpen(false)}
+                        className="p-2 text-[var(--text)] hover:text-[var(--accent)] transition-colors"
+                        aria-label="Cerrar menú"
+                    >
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <nav className="flex flex-col items-center justify-center flex-1 gap-8 text-xl p-6">
                     {navLinks.map((link) => (
                         <NavLink
                             key={link.path}
                             to={link.path}
                             className={({ isActive }) =>
                                 clsx(
-                                    "font-medium border-b border-[var(--border)] pb-4 transition-colors",
-                                    isActive ? "text-[var(--accent)] border-[var(--accent)]" : "text-[var(--text)]"
+                                    "font-medium transition-colors hover:text-[var(--accent)]",
+                                    isActive ? "text-[var(--accent)]" : "text-[var(--text)]"
                                 )
                             }
                             onClick={() => setIsOpen(false)}
@@ -122,7 +137,7 @@ export function Navbar() {
                     {anchorLinks.map((link) => (
                         <a
                             key={link.name}
-                            className="font-medium text-[var(--text)] border-b border-[var(--border)] pb-4 hover:text-[var(--accent)] transition-colors"
+                            className="font-medium text-[var(--text)] hover:text-[var(--accent)] transition-colors"
                             href={link.href}
                             onClick={() => setIsOpen(false)}
                         >
@@ -131,10 +146,10 @@ export function Navbar() {
                     ))}
                     <a
                         href="/#contacto"
-                        className="mt-4"
+                        className="mt-4 w-full max-w-xs"
                         onClick={() => setIsOpen(false)}
                     >
-                        <Button className="w-full justify-center h-12 text-base">Hablemos</Button>
+                        <Button className="w-full justify-center h-14 text-lg">Hablemos</Button>
                     </a>
                 </nav>
             </div>
