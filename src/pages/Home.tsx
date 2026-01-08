@@ -162,7 +162,7 @@ export function Home() {
                 <div className="grid gap-6 lg:grid-cols-12">
                     <div className="lg:col-span-7 rounded-3xl bg-[var(--surface)] border border-[var(--border)] shadow-soft p-6 flex flex-col sm:flex-row gap-6 items-start">
                         {/* Profile Image Injection */}
-                        <div className="shrink-0 w-24 h-24 sm:w-32 sm:h-32 rounded-full overflow-hidden bg-gray-100 border border-[var(--border)]">
+                        <div className="shrink-0 w-full sm:w-32 aspect-[4/5] sm:aspect-square rounded-2xl sm:rounded-full overflow-hidden bg-gray-100 border border-[var(--border)] max-w-[240px] sm:max-w-none mx-auto sm:mx-0">
                             <img src="/assets/profile.jpg" alt="Mayra Ortega" className="w-full h-full object-cover" />
                         </div>
                         <div>
