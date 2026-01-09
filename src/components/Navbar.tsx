@@ -1,5 +1,6 @@
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { Button } from "./Button";
 import { clsx } from "../utils/clsx";
 
@@ -95,64 +96,64 @@ export function Navbar() {
                 </div>
             </div>
 
-            {/* Mobile Drawer */}
-            <div
-                className={clsx(
-                    "fixed inset-0 z-[100] bg-[var(--bg)] transform transition-transform duration-300 lg:hidden flex flex-col",
-                    isOpen ? "translate-x-0" : "translate-x-full"
-                )}
-                role="dialog"
-                aria-modal="true"
-            >
-                <div className="flex justify-between items-center p-4 border-b border-[var(--border)]">
-                    <span className="font-bold text-xl text-[var(--text)]">Menú</span>
-                    <button
-                        onClick={() => setIsOpen(false)}
-                        className="p-2 text-[var(--text)] hover:text-[var(--accent)] transition-colors"
-                        aria-label="Cerrar menú"
-                    >
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
+            {/* Mobile Drawer (Portal) */}
+            {isOpen && createPortal(
+                <div
+                    className="fixed inset-0 z-[9999] bg-[var(--bg)] flex flex-col"
+                    role="dialog"
+                    aria-modal="true"
+                >
+                    <div className="flex justify-between items-center p-4 border-b border-[var(--border)] bg-[var(--bg)]">
+                        <span className="font-bold text-xl text-[var(--text)]">Menú</span>
+                        <button
+                            onClick={() => setIsOpen(false)}
+                            className="p-2 text-[var(--text)] hover:text-[var(--accent)] transition-colors"
+                            aria-label="Cerrar menú"
+                        >
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
 
-                <nav className="flex flex-col items-center justify-center flex-1 gap-8 text-xl p-6">
-                    {navLinks.map((link) => (
-                        <NavLink
-                            key={link.path}
-                            to={link.path}
-                            className={({ isActive }) =>
-                                clsx(
-                                    "font-medium transition-colors hover:text-[var(--accent)]",
-                                    isActive ? "text-[var(--accent)]" : "text-[var(--text)]"
-                                )
-                            }
-                            onClick={() => setIsOpen(false)}
-                            end={link.exact}
-                        >
-                            {link.name}
-                        </NavLink>
-                    ))}
-                    {anchorLinks.map((link) => (
+                    <nav className="flex flex-col items-center justify-center flex-1 gap-8 text-xl p-6 bg-[var(--bg)] overflow-y-auto">
+                        {navLinks.map((link) => (
+                            <NavLink
+                                key={link.path}
+                                to={link.path}
+                                className={({ isActive }) =>
+                                    clsx(
+                                        "font-medium transition-colors hover:text-[var(--accent)]",
+                                        isActive ? "text-[var(--accent)]" : "text-[var(--text)]"
+                                    )
+                                }
+                                onClick={() => setIsOpen(false)}
+                                end={link.exact}
+                            >
+                                {link.name}
+                            </NavLink>
+                        ))}
+                        {anchorLinks.map((link) => (
+                            <a
+                                key={link.name}
+                                className="font-medium text-[var(--text)] hover:text-[var(--accent)] transition-colors"
+                                href={link.href}
+                                onClick={() => setIsOpen(false)}
+                            >
+                                {link.name}
+                            </a>
+                        ))}
                         <a
-                            key={link.name}
-                            className="font-medium text-[var(--text)] hover:text-[var(--accent)] transition-colors"
-                            href={link.href}
+                            href="/#contacto"
+                            className="mt-4 w-full max-w-xs"
                             onClick={() => setIsOpen(false)}
                         >
-                            {link.name}
+                            <Button className="w-full justify-center h-14 text-lg">Hablemos</Button>
                         </a>
-                    ))}
-                    <a
-                        href="/#contacto"
-                        className="mt-4 w-full max-w-xs"
-                        onClick={() => setIsOpen(false)}
-                    >
-                        <Button className="w-full justify-center h-14 text-lg">Hablemos</Button>
-                    </a>
-                </nav>
-            </div>
+                    </nav>
+                </div>,
+                document.body
+            )}
         </header>
     );
 }
