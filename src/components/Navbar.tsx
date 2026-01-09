@@ -35,7 +35,6 @@ export function Navbar() {
 
     const anchorLinks = [
         { name: "Sobre mí", href: isHome ? "#sobre-mi" : "/#sobre-mi" },
-        { name: "Proceso", href: isHome ? "#proceso" : "/#proceso" },
     ];
 
     // Simple helper for "Inicio" specifically which can be tricky
