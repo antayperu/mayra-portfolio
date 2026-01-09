@@ -184,17 +184,17 @@ export const projects: Project[] = [
 
     // PLACEHOLDER 1 (sin marcas reales)
     {
-        slug: "identidad-emprendimiento-familiar",
+        slug: "emprendimiento-familiar",
         category: "professional",
-        title: "Identidad visual — Emprendimiento familiar (Editable)",
-        subtitle: "Caso editable para adaptar a un negocio real.",
+        title: "Identidad visual — Emprendimiento familiar",
+        subtitle: "Caso práctico de adaptación de marca para un negocio real.",
         year: "—",
         location: "—",
         role: "—",
         tags: ["Branding", "Identidad Visual"],
         cover: {
-            src: "https://images.unsplash.com/photo-1520975919121-88f9482a7d86?auto=format&fit=crop&w=1600&q=80",
-            alt: "Placeholder premium (editable)",
+            src: "/assets/projects/project1.jpg",
+            alt: "Identidad visual para emprendimiento familiar",
         },
         featured: true,
         context:

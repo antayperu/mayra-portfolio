@@ -57,10 +57,11 @@ export function Navbar() {
                 <Link
                     to="/"
                     onClick={handleHomeClick}
-                    className="font-bold tracking-tight text-lg sm:text-xl text-[var(--text)] hover:text-[var(--accent)] transition-colors z-50 relative truncate max-w-[200px] sm:max-w-none"
+                    className="font-bold tracking-tight text-lg sm:text-xl text-[var(--text)] hover:text-[var(--accent)] transition-colors z-50 relative"
                     title="Mayra Alejandra Ortega Camacho"
                 >
-                    Mayra Alejandra Ortega Camacho
+                    <span className="sm:hidden">Mayra Ortega</span>
+                    <span className="hidden sm:block">Mayra Alejandra Ortega Camacho</span>
                 </Link>
 
                 {/* Desktop Nav */}
