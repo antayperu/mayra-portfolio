@@ -5,6 +5,8 @@ export type GalleryItem = {
     src: string;
     alt: string;
     ratio?: "square" | "fourThree" | "sixteenNine";
+    fit?: "cover" | "contain";
+    bg?: string;
 };
 
 const ratioClass = (r: GalleryItem["ratio"]) => {
@@ -46,12 +48,18 @@ export function Gallery({ items }: { items: GalleryItem[] }) {
                             setOpen(true);
                         }}
                     >
-                        <div className={clsx("w-full bg-black/5", ratioClass(it.ratio))}>
+                        <div
+                            className={clsx("w-full overflow-hidden", ratioClass(it.ratio))}
+                            style={{ backgroundColor: it.bg || "rgba(0,0,0,0.05)" }}
+                        >
                             <img
                                 src={it.src}
                                 alt={it.alt}
                                 loading="lazy"
-                                className="h-full w-full object-cover"
+                                className={clsx(
+                                    "h-full w-full",
+                                    it.fit === "contain" ? "object-contain" : "object-cover"
+                                )}
                             />
                         </div>
                     </button>

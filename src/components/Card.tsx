@@ -6,18 +6,29 @@ type Props = {
     summary: string;
     tags: string[];
     href: string;
-    image: { src: string; alt: string };
+    image: {
+        src: string;
+        alt: string;
+        fit?: "cover" | "contain" | "fill";
+        bg?: string;
+        style?: React.CSSProperties;
+    };
 };
 
 export function Card({ title, summary, tags, href, image }: Props) {
     return (
         <article className="group relative flex flex-col rounded-[20px] bg-[var(--surface)] border border-[var(--border)] overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-[var(--text-secondary)]/20">
-            <div className="aspect-video w-full bg-[var(--surface-raised)] overflow-hidden">
+            <div
+                className="aspect-video w-full overflow-hidden"
+                style={{ backgroundColor: image.bg || 'var(--surface-raised)' }}
+            >
                 <img
                     src={image.src}
                     alt={image.alt}
                     loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                    style={image.style}
+                    className={`h-full w-full transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100 ${image.fit === 'contain' ? 'object-contain' : 'object-cover'
+                        }`}
                 />
             </div>
 

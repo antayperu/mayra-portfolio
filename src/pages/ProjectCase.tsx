@@ -118,43 +118,45 @@ export function ProjectCase() {
                 </div>
 
                 {/* Sistema visual */}
-                <section className="mt-6 rounded-3xl bg-[var(--surface)] border border-[var(--border)] shadow-soft p-6 sm:p-8">
-                    <h2 className="text-xl font-semibold tracking-tight">Sistema visual</h2>
+                {project.visualSystem ? (
+                    <section className="mt-6 rounded-3xl bg-[var(--surface)] border border-[var(--border)] shadow-soft p-6 sm:p-8">
+                        <h2 className="text-xl font-semibold tracking-tight">Sistema visual</h2>
 
-                    <div className="mt-6 grid gap-6 lg:grid-cols-12">
-                        <div className="lg:col-span-5">
-                            <p className="text-sm font-semibold">Swatches</p>
-                            <div className="mt-3 grid grid-cols-2 gap-3">
-                                {project.visualSystem.palette.map((c) => (
-                                    <div key={c.hex} className="rounded-2xl border border-[var(--border)] overflow-hidden bg-white">
-                                        <div className="h-12" style={{ background: c.hex }} />
-                                        <div className="p-3">
-                                            <p className="text-sm font-semibold">{c.name}</p>
-                                            <p className="text-xs text-[var(--muted)]">{c.hex}</p>
+                        <div className="mt-6 grid gap-6 lg:grid-cols-12">
+                            <div className="lg:col-span-5">
+                                <p className="text-sm font-semibold">Swatches</p>
+                                <div className="mt-3 grid grid-cols-2 gap-3">
+                                    {project.visualSystem.palette.map((c) => (
+                                        <div key={c.hex} className="rounded-2xl border border-[var(--border)] overflow-hidden bg-white">
+                                            <div className="h-12" style={{ background: c.hex }} />
+                                            <div className="p-3">
+                                                <p className="text-sm font-semibold">{c.name}</p>
+                                                <p className="text-xs text-[var(--muted)]">{c.hex}</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-
-                        <div className="lg:col-span-7">
-                            <p className="text-sm font-semibold">Tipografía</p>
-                            <div className="mt-3 rounded-2xl border border-[var(--border)] bg-white p-4">
-                                <p className="text-lg font-semibold">{project.visualSystem.typography.primary}</p>
-                                <p className="mt-2 text-sm text-[var(--muted)] leading-[1.7]">
-                                    {project.visualSystem.typography.notes}
-                                </p>
+                                    ))}
+                                </div>
                             </div>
 
-                            <p className="mt-6 text-sm font-semibold">Reglas de uso</p>
-                            <ul className="mt-3 space-y-2 text-sm text-[var(--muted)] leading-[1.7]">
-                                {project.visualSystem.rules.map((r) => (
-                                    <li key={r}>• {r}</li>
-                                ))}
-                            </ul>
+                            <div className="lg:col-span-7">
+                                <p className="text-sm font-semibold">Tipografía</p>
+                                <div className="mt-3 rounded-2xl border border-[var(--border)] bg-white p-4">
+                                    <p className="text-lg font-semibold">{project.visualSystem.typography.primary}</p>
+                                    <p className="mt-2 text-sm text-[var(--muted)] leading-[1.7]">
+                                        {project.visualSystem.typography.notes}
+                                    </p>
+                                </div>
+
+                                <p className="mt-6 text-sm font-semibold">Reglas de uso</p>
+                                <ul className="mt-3 space-y-2 text-sm text-[var(--muted)] leading-[1.7]">
+                                    {project.visualSystem.rules.map((r) => (
+                                        <li key={r}>• {r}</li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                ) : null}
 
                 {/* Aplicaciones / Galería */}
                 <section id="piezas" className="mt-6 rounded-3xl bg-[var(--surface)] border border-[var(--border)] shadow-soft p-6 sm:p-8">
@@ -180,32 +182,34 @@ export function ProjectCase() {
                     </section>
                 </div>
 
-                {/* CTA final */}
-                <section className="mt-6 rounded-3xl bg-[var(--text)] text-white p-6 sm:p-8">
-                    <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">
-                        ¿Quieres una marca consistente? Conversemos.
-                    </h2>
-                    <p className="mt-3 text-sm sm:text-base text-white/80 leading-[1.7] max-w-2xl">
-                        Escríbeme y cuéntame qué necesitas. Te ayudaré a definir un camino claro para tu identidad o contenido.
-                    </p>
+                {/* CTA final (Oculto temporalmente) */}
+                {false && (
+                    <section className="mt-6 rounded-3xl bg-[var(--text)] text-white p-6 sm:p-8">
+                        <h2 className="text-xl sm:text-2xl font-semibold tracking-tight">
+                            ¿Quieres una marca consistente? Conversemos.
+                        </h2>
+                        <p className="mt-3 text-sm sm:text-base text-white/80 leading-[1.7] max-w-2xl">
+                            Escríbeme y cuéntame qué necesitas. Te ayudaré a definir un camino claro para tu identidad o contenido.
+                        </p>
 
-                    <div className="mt-6 flex flex-wrap gap-3">
-                        <a href={`mailto:${PROFILE.email}`}>
-                            <Button className="bg-white text-[var(--text)] hover:opacity-90">Enviar correo</Button>
-                        </a>
-                        <a
-                            href={`https://wa.me/51934855351?text=${encodeURIComponent(
-                                "Hola Mayra, vi tu caso de estudio y me gustaría conversar."
-                            )}`}
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            <Button variant="ghost" className="text-white hover:bg-white/10">
-                                WhatsApp
-                            </Button>
-                        </a>
-                    </div>
-                </section>
+                        <div className="mt-6 flex flex-wrap gap-3">
+                            <a href={`mailto:${PROFILE.email}`}>
+                                <Button className="bg-white text-[var(--text)] hover:opacity-90">Enviar correo</Button>
+                            </a>
+                            <a
+                                href={`https://wa.me/51934855351?text=${encodeURIComponent(
+                                    "Hola Mayra, vi tu caso de estudio y me gustaría conversar."
+                                )}`}
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <Button variant="ghost" className="text-white hover:bg-white/10">
+                                    WhatsApp
+                                </Button>
+                            </a>
+                        </div>
+                    </section>
+                )}
             </div>
         </>
     );

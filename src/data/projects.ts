@@ -8,7 +8,13 @@ export type Project = {
     location: string;
     role: string;
     tags: string[];
-    cover: { src: string; alt: string };
+    cover: {
+        src: string;
+        alt: string;
+        fit?: "cover" | "contain" | "fill";
+        bg?: string;
+        style?: React.CSSProperties;
+    },
     featured: boolean;
 
     // Case study content
@@ -17,7 +23,7 @@ export type Project = {
     slogans?: string[];
     goals: string[];
     deliverables: string[];
-    visualSystem: {
+    visualSystem?: {
         palette: Array<{ name: string; hex: string }>;
         typography: { primary: string; notes: string };
         rules: string[];
@@ -46,7 +52,7 @@ export const projects: Project[] = [
         role: "Asistente de ventas y apoyo en marketing",
         tags: ["Branding", "Identidad Visual", "RRSS (Facebook)", "Edición foto/video"],
         cover: {
-            src: "/assets/antay-logo.jpg",
+            src: "/assets/projects/tienda-antay-cover.jpg",
             alt: "Identidad visual Tienda Antay",
         },
         featured: true,
@@ -66,6 +72,7 @@ export const projects: Project[] = [
             "Plantillas y piezas para Facebook (promociones, saludos, avisos).",
             "Edición de fotografía y video para mostrar productos con calidad.",
         ],
+        /*
         visualSystem: {
             palette: [
                 { name: "Base", hex: "#FAF8F5" },
@@ -83,21 +90,22 @@ export const projects: Project[] = [
                 "Fotografía limpia: productos bien iluminados y encuadres estables.",
             ],
         },
+        */
         gallery: [
             {
-                src: "https://images.unsplash.com/photo-1520975958221-2a1622b1dce3?auto=format&fit=crop&w=1600&q=80",
-                alt: "Mockup de pieza para redes",
-                ratio: "fourThree",
+                src: "/assets/projects/tienda-antay-rrss.jpg",
+                alt: "Grilla de contenido para Redes Sociales",
+                ratio: "square",
             },
             {
-                src: "https://images.unsplash.com/photo-1520975867597-0f21dd0f1dfb?auto=format&fit=crop&w=1600&q=80",
-                alt: "Mockup de papelería básica",
-                ratio: "fourThree",
+                src: "/assets/projects/tienda-antay-retail.jpg",
+                alt: "Aplicación de marca en punto de venta",
+                ratio: "square",
             },
             {
-                src: "https://images.unsplash.com/photo-1520975682033-6dca8e5a7a6d?auto=format&fit=crop&w=1600&q=80",
-                alt: "Mockup de comunicación en tienda",
-                ratio: "fourThree",
+                src: "/assets/projects/tienda-antay-producto2.jpg",
+                alt: "Fotografía de producto con identidad",
+                ratio: "square",
             },
         ],
         result:
@@ -118,8 +126,11 @@ export const projects: Project[] = [
         role: "Diseño de identidad y manual",
         tags: ["Branding", "Manual de Marca", "Diseño Editorial"],
         cover: {
-            src: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=80",
+            src: "/assets/projects/iway-cover.png",
             alt: "Portada Manual de Marca IWAY",
+            fit: "contain",
+            bg: "#548FC6", // Azul de la marca
+            style: { clipPath: "inset(0 2px 0 2px)" }, // Recorte de bordes blancos laterales
         },
         featured: false,
         context:
@@ -135,6 +146,7 @@ export const projects: Project[] = [
             "Sistema de colores corporativos y tipografías.",
             "Diseño de papelería corporativa y propuesta de Landing Page.",
         ],
+        /*
         visualSystem: {
             palette: [
                 { name: "Tech Blue", hex: "#0056D2" },
@@ -151,26 +163,35 @@ export const projects: Project[] = [
                 "Estilo iconográfico lineal y simple.",
             ],
         },
+        */
         gallery: [
             {
-                src: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1600&q=80",
-                alt: "Versiones del logotipo y grilla",
-                ratio: "fourThree",
+                src: "/assets/projects/iway-app.png",
+                alt: "Aplicación móvil y usuario",
+                ratio: "square",
+                fit: "contain",
+                bg: "#0B162C", // Azul oscuro profundo para complementar la imagen
             },
             {
-                src: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1600&q=80",
-                alt: "Colores corporativos y tipografía",
-                ratio: "fourThree",
+                src: "/assets/projects/iway-stationery.png",
+                alt: "Set de papelería corporativa",
+                ratio: "square",
+                fit: "contain",
+                bg: "#EAEAEA", // Gris claro para continuidad visual
             },
             {
-                src: "https://images.unsplash.com/photo-1517292987719-0369a794ec0f?auto=format&fit=crop&w=1600&q=80",
-                alt: "Papelería y aplicaciones de marca",
-                ratio: "fourThree",
+                src: "/assets/projects/iway-logo-black.png",
+                alt: "Logotipo versión negativa",
+                ratio: "square",
+                fit: "contain",
+                bg: "#000000",
             },
             {
-                src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80",
-                alt: "Propuesta de Landing Page",
-                ratio: "fourThree",
+                src: "/assets/projects/iway-logo-white.png",
+                alt: "Logotipo versión positiva lineral",
+                ratio: "square",
+                fit: "contain",
+                bg: "#FFFFFF",
             },
         ],
         result:
@@ -222,6 +243,7 @@ export const projects: Project[] = [
     },
 
     // PLACEHOLDER 2 (sin marcas reales)
+    /*
     {
         slug: "kit-contenido-redes",
         category: "professional",
@@ -258,6 +280,7 @@ export const projects: Project[] = [
         result: "(EDITAR AQUÍ) Resultado cualitativo sin métricas.",
         learnings: ["(EDITAR AQUÍ) Aprendizaje 1", "(EDITAR AQUÍ) Aprendizaje 2", "(EDITAR AQUÍ) Aprendizaje 3"],
     },
+    */
 ];
 
 export const PROFESSIONAL_PROJECTS = projects.filter((p) => p.category === "professional");
