@@ -1,4 +1,4 @@
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Button } from "./Button";
@@ -6,6 +6,7 @@ import { clsx } from "../utils/clsx";
 
 export function Navbar() {
     const location = useLocation();
+    const navigate = useNavigate();
     const isHome = location.pathname === "/";
     const [isOpen, setIsOpen] = useState(false);
 
@@ -18,6 +19,7 @@ export function Navbar() {
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = "hidden";
+            // Optional: add padding-right if needed to prevent layout shift from scrollbar removal
         } else {
             document.body.style.overflow = "";
         }
@@ -27,7 +29,7 @@ export function Navbar() {
     }, [isOpen]);
 
     const navLinks = [
-        { name: "Inicio", path: "/", exact: true },
+        { name: "Inicio", path: "/", hash: "#inicio", exact: true },
         { name: "Proyectos", path: "/proyectos", exact: false },
     ];
 
@@ -36,23 +38,42 @@ export function Navbar() {
         { name: "Proceso", href: isHome ? "#proceso" : "/#proceso" },
     ];
 
+    // Simple helper for "Inicio" specifically which can be tricky
+    const handleHomeClick = (e: React.MouseEvent) => {
+        e.preventDefault();
+        setIsOpen(false);
+        if (isHome) {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        } else {
+            navigate("/");
+            // Scroll to top happens automatically by most routers or browsers on new page, 
+            // but we can ensure it if we use a ScrollToTop component (usually present in App)
+        }
+    };
+
     return (
         <header className="sticky top-0 z-40 backdrop-blur-md bg-[var(--bg)]/90 border-b border-[var(--border)] supports-[backdrop-filter]:bg-[var(--bg)]/60">
             <div className="mx-auto max-w-6xl px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
-                <Link to="/" className="font-bold tracking-tight text-xl text-[var(--text)] hover:text-[var(--accent)] transition-colors z-50 relative">
-                    Mayra Ortega
+                <Link
+                    to="/"
+                    onClick={handleHomeClick}
+                    className="font-bold tracking-tight text-lg sm:text-xl text-[var(--text)] hover:text-[var(--accent)] transition-colors z-50 relative truncate max-w-[200px] sm:max-w-none"
+                    title="Mayra Alejandra Ortega Camacho"
+                >
+                    Mayra Alejandra Ortega Camacho
                 </Link>
 
                 {/* Desktop Nav */}
                 <nav className="hidden lg:flex items-center gap-6">
                     {navLinks.map((link) => (
                         <NavLink
-                            key={link.path}
+                            key={link.name}
                             to={link.path}
                             className={({ isActive }) =>
                                 clsx(
                                     "text-sm font-medium transition-colors hover:text-[var(--accent)]",
-                                    isActive ? "text-[var(--accent)]" : "text-[var(--text-secondary)]"
+                                    isActive && link.path !== "/" ? "text-[var(--accent)]" : "text-[var(--text-secondary)]",
+                                    link.path === "/" && isHome ? "text-[var(--accent)]" : ""
                                 )
                             }
                             end={link.exact}
@@ -63,8 +84,20 @@ export function Navbar() {
                     {anchorLinks.map((link) => (
                         <a
                             key={link.name}
-                            className="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors"
+                            className="text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors cursor-pointer"
                             href={link.href}
+                            onClick={(e) => {
+                                e.preventDefault();
+                                const targetId = link.href.includes("#") ? link.href.split("#")[1] : "";
+                                if (isHome) {
+                                    document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
+                                } else {
+                                    navigate("/");
+                                    setTimeout(() => {
+                                        document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
+                                    }, 100);
+                                }
+                            }}
                         >
                             {link.name}
                         </a>
@@ -99,15 +132,15 @@ export function Navbar() {
             {/* Mobile Drawer (Portal) */}
             {isOpen && createPortal(
                 <div
-                    className="fixed inset-0 z-[9999] bg-[var(--bg)] flex flex-col"
+                    className="fixed inset-0 z-[9999] bg-[var(--bg)]/95 backdrop-blur-sm flex flex-col"
                     role="dialog"
                     aria-modal="true"
                 >
-                    <div className="flex justify-between items-center p-4 border-b border-[var(--border)] bg-[var(--bg)]">
-                        <span className="font-bold text-xl text-[var(--text)]">Menú</span>
+                    <div className="flex justify-between items-center p-4 h-16 border-b border-[var(--border)]">
+                        <span className="font-bold text-lg truncate pr-4 text-[var(--text)] opacity-50">Menú</span>
                         <button
                             onClick={() => setIsOpen(false)}
-                            className="p-2 text-[var(--text)] hover:text-[var(--accent)] transition-colors"
+                            className="p-2 -mr-2 text-[var(--text)] hover:text-[var(--accent)] transition-colors"
                             aria-label="Cerrar menú"
                         >
                             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -116,33 +149,55 @@ export function Navbar() {
                         </button>
                     </div>
 
-                    <nav className="flex flex-col items-center justify-center flex-1 gap-8 text-xl p-6 bg-[var(--bg)] overflow-y-auto">
-                        {navLinks.map((link) => (
-                            <NavLink
-                                key={link.path}
-                                to={link.path}
-                                className={({ isActive }) =>
-                                    clsx(
-                                        "font-medium transition-colors hover:text-[var(--accent)]",
-                                        isActive ? "text-[var(--accent)]" : "text-[var(--text)]"
-                                    )
-                                }
-                                onClick={() => setIsOpen(false)}
-                                end={link.exact}
-                            >
-                                {link.name}
-                            </NavLink>
-                        ))}
+                    <nav className="flex flex-col items-center justify-center flex-1 gap-8 text-xl p-6 overflow-y-auto">
+                        <a
+                            href="/"
+                            onClick={handleHomeClick}
+                            className={clsx(
+                                "font-medium transition-colors hover:text-[var(--accent)]",
+                                isHome ? "text-[var(--accent)]" : "text-[var(--text)]"
+                            )}
+                        >
+                            Inicio
+                        </a>
+
+                        <NavLink
+                            to="/proyectos"
+                            onClick={() => setIsOpen(false)}
+                            className={({ isActive }) =>
+                                clsx(
+                                    "font-medium transition-colors hover:text-[var(--accent)]",
+                                    isActive ? "text-[var(--accent)]" : "text-[var(--text)]"
+                                )
+                            }
+                        >
+                            Proyectos
+                        </NavLink>
+
                         {anchorLinks.map((link) => (
                             <a
                                 key={link.name}
-                                className="font-medium text-[var(--text)] hover:text-[var(--accent)] transition-colors"
+                                className="font-medium text-[var(--text)] hover:text-[var(--accent)] transition-colors cursor-pointer"
                                 href={link.href}
-                                onClick={() => setIsOpen(false)}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    setIsOpen(false);
+                                    const targetId = link.href.includes("#") ? link.href.split("#")[1] : "";
+
+                                    if (isHome) {
+                                        document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
+                                    } else {
+                                        navigate("/");
+                                        setTimeout(() => {
+                                            document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
+                                        }, 100);
+                                    }
+                                }}
                             >
                                 {link.name}
                             </a>
                         ))}
+
                         <a
                             href="/#contacto"
                             className="mt-4 w-full max-w-xs"
