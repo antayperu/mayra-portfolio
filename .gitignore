@@ -64,22 +64,6 @@ typings/
 # Optional REPL history
 .node_repl_history
 
-# Output of 'npm pack'
-*.tgz
-
-# Yarn Integrity file
-.yarn-integrity
-
-# dotenv environment variables file
-.env
-.env.test
-.env.production
-
-# parcel-bundler cache (https://parceljs.org/)
-.cache
-.parcel-cache
-
-# Next.js build output
 .next
 out
 
@@ -120,3 +104,12 @@ dist
 
 # Local Netlify folder
 .netlify
+
+# ============================================
+# Antay Methodology - Secrets & Logs
+# ============================================
+.env
+.env.local
+.env.*.local
+docops/*.log
+docops/handoff.json

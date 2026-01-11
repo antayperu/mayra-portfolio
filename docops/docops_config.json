@@ -1,0 +1,62 @@
+{
+    "project_name": "mayra-portfolio",
+    "notion_config": {
+        "database_id": "${NOTION_DATABASE_ID}",
+        "api_version": "2022-06-28",
+        "properties": {
+            "title_property_name": "Name",
+            "status_property_name": "Status",
+            "status_type": "status",
+            "priority_property_name": "Priority",
+            "assignee_property_name": "Assignee",
+            "tags_property_name": "Tags"
+        },
+        "valid_statuses": [
+            "Backlog",
+            "Ready",
+            "In Progress",
+            "Done",
+            "Blocked"
+        ]
+    },
+    "github_config": {
+        "repository": "mayra-portfolio",
+        "default_branch": "master",
+        "commit_types": [
+            "feat",
+            "fix",
+            "docs",
+            "style",
+            "refactor",
+            "test",
+            "chore"
+        ]
+    },
+    "gates": {
+        "gate0": {
+            "name": "Preflight Check",
+            "description": "Validate configuration and environment before starting work",
+            "checks": [
+                "env_file_exists",
+                "notion_api_connection",
+                "git_status_clean",
+                "required_directories"
+            ]
+        },
+        "gate3": {
+            "name": "Verification",
+            "description": "Validate changes before commit",
+            "checks": [
+                "linting_passed",
+                "build_successful",
+                "no_secrets_in_code",
+                "notion_sync_successful"
+            ]
+        }
+    },
+    "logging": {
+        "log_file": "docops/docops.log",
+        "log_level": "INFO",
+        "max_log_size_mb": 10
+    }
+}

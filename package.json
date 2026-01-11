@@ -7,7 +7,11 @@
     "dev": "node ./node_modules/vite/bin/vite.js",
     "build": "node ./node_modules/vite/bin/vite.js build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "node ./node_modules/vite/bin/vite.js preview"
+    "preview": "node ./node_modules/vite/bin/vite.js preview",
+    "gate0": "python scripts/gate0_preflight.py",
+    "gate3": "python scripts/gate3_verification.py",
+    "docops:sync": "python docops/antay_docops.py sync",
+    "docops:status": "python docops/antay_docops.py status"
   },
   "dependencies": {
     "react": "^18.3.1",

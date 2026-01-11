@@ -1,0 +1,23 @@
+tipo(scope): descripción breve en español
+
+# Tipo: feat|fix|docs|style|refactor|test|chore
+# Scope: componente afectado (navbar, gallery, home, projects, etc.)
+# 
+# Descripción detallada (opcional):
+# - Cambio 1
+# - Cambio 2
+# - Cambio 3
+#
+# Referencias:
+# - Notion Task: [ID o título]
+# - Issue: #[número]
+# - FRD: [referencia a documento de requisitos]
+#
+# Ejemplos:
+# feat(gallery): implementar lazy loading de imágenes
+# fix(navbar): corregir toggle de menú móvil
+# docs(readme): actualizar instrucciones de instalación
+# style(home): ajustar espaciado en sección hero
+# refactor(projects): modularizar componente de tarjetas
+# test(navbar): añadir tests unitarios para navegación
+# chore(deps): actualizar dependencias de React

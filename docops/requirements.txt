@@ -1,0 +1,18 @@
+# Antay DOCOPS Dependencies
+# Notion API client for database synchronization
+notion-client>=2.2.1
+
+# Environment variable management
+python-dotenv>=1.0.0
+
+# HTTP requests for API calls
+requests>=2.31.0
+
+# JSON schema validation
+jsonschema>=4.20.0
+
+# Date and time utilities
+python-dateutil>=2.8.2
+
+# Rich terminal output for better UX
+rich>=13.7.0
