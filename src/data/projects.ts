@@ -98,8 +98,8 @@ export const projects: Project[] = [
                 ratio: "square",
             },
             {
-                src: "/assets/projects/tienda-antay-retail.jpg",
-                alt: "Aplicación de marca en punto de venta",
+                src: "/assets/projects/tienda-antay-branding.png",
+                alt: "Aplicación de identidad visual en papelería y packaging",
                 ratio: "square",
             },
             {
@@ -203,43 +203,70 @@ export const projects: Project[] = [
         ],
     },
 
-    // PLACEHOLDER 1 (sin marcas reales)
+    // PROYECTOS UNIVERSITARIOS - UPC
     {
         slug: "emprendimiento-familiar",
         category: "professional",
         title: "Proyectos universitarios",
-        subtitle: "Caso práctico de adaptación de marca para un negocio real.",
-        year: "—",
-        location: "—",
-        role: "—",
-        tags: ["Branding", "Identidad Visual"],
+        subtitle: "Diseño editorial y branding desarrollados en la UPC.",
+        year: "2023–2024",
+        location: "Universidad Peruana de Ciencias Aplicadas (UPC)",
+        role: "Diseñadora gráfica y editorial",
+        tags: ["Diseño Editorial", "Branding", "Identidad Visual", "Fotografía de Producto"],
         cover: {
-            src: "/assets/projects/project1.jpg",
-            alt: "Identidad visual para emprendimiento familiar",
+            src: "/assets/projects/proyectos-universitarios-cover.png",
+            alt: "Portada de revista Video Juego - Diseño editorial",
         },
         featured: true,
         context:
-            "Proyecto placeholder para que reemplaces con un caso real cuando tengas assets y contexto final.",
-        goals: ["(EDITAR AQUÍ) Objetivo 1", "(EDITAR AQUÍ) Objetivo 2", "(EDITAR AQUÍ) Objetivo 3"],
-        deliverables: ["(EDITAR AQUÍ) Entregable 1", "(EDITAR AQUÍ) Entregable 2"],
+            "Colección de proyectos académicos desarrollados durante mi formación en la Universidad Peruana de Ciencias Aplicadas (UPC). Estos trabajos demuestran habilidades en diseño editorial, branding y fotografía de producto, aplicando conceptos teóricos a casos prácticos con enfoque profesional.",
+        goals: [
+            "Aplicar principios de diseño editorial en publicaciones impresas y digitales.",
+            "Desarrollar identidades visuales coherentes para productos y marcas ficticias.",
+            "Dominar técnicas de fotografía de producto y retoque digital.",
+        ],
+        deliverables: [
+            "Revista 'Video Juego': Diseño editorial completo con portada, maquetación y sistema gráfico.",
+            "Fotografía de producto 'Chronos': Composición, iluminación y retoque profesional.",
+            "Propuestas de branding para diversos proyectos académicos.",
+        ],
+        /*
         visualSystem: {
             palette: [
                 { name: "Base", hex: "#FAF8F5" },
                 { name: "Texto", hex: "#121212" },
                 { name: "Acento", hex: "#C46A3B" },
             ],
-            typography: { primary: "Plus Jakarta Sans", notes: "(EDITAR AQUÍ) Notas de tipografía" },
-            rules: ["(EDITAR AQUÍ) Regla 1", "(EDITAR AQUÍ) Regla 2"],
+            typography: { primary: "Plus Jakarta Sans", notes: "Tipografía moderna y versátil para proyectos editoriales" },
+            rules: [
+                "Jerarquía visual clara en composiciones editoriales",
+                "Uso consistente de retículas y sistemas de maquetación",
+            ],
         },
+        */
         gallery: [
             {
-                src: "https://images.unsplash.com/photo-1520975732146-65d93a4668a0?auto=format&fit=crop&w=1600&q=80",
-                alt: "Placeholder de pieza (editable)",
-                ratio: "square",
+                src: "/assets/projects/proyectos-universitarios-revista.png",
+                alt: "Portada revista Video Juego - Diseño editorial UPC",
+                ratio: "fourThree",
+                fit: "contain",
+                bg: "#1a1a1a",
+            },
+            {
+                src: "/assets/projects/proyectos-universitarios-chronos.png",
+                alt: "Fotografía de producto Chronos - Proyecto UPC",
+                ratio: "fourThree",
+                fit: "contain",
+                bg: "#e8f4f8",
             },
         ],
-        result: "(EDITAR AQUÍ) Resultado cualitativo sin métricas.",
-        learnings: ["(EDITAR AQUÍ) Aprendizaje 1", "(EDITAR AQUÍ) Aprendizaje 2", "(EDITAR AQUÍ) Aprendizaje 3"],
+        result:
+            "Los proyectos universitarios permitieron consolidar habilidades técnicas en diseño gráfico, editorial y fotografía de producto, preparando una base sólida para el trabajo profesional. Cada pieza refleja atención al detalle y comprensión de los principios fundamentales del diseño.",
+        learnings: [
+            "El diseño editorial requiere equilibrio entre creatividad y legibilidad.",
+            "La fotografía de producto profesional combina técnica, iluminación y post-producción.",
+            "Los proyectos académicos son oportunidades para experimentar sin límites comerciales.",
+        ],
     },
 
     // PLACEHOLDER 2 (sin marcas reales)
