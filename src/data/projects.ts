@@ -45,7 +45,7 @@ export const projects: Project[] = [
     {
         slug: "tienda-antay",
         category: "professional",
-        title: "Caso de Estudio — Tienda Antay",
+        title: "Identidad visual — Emprendimiento familiar",
         subtitle: "Identidad visual y contenido para Facebook.",
         year: "2021–2022",
         location: "Cajatambo, Lima — Perú",
@@ -207,7 +207,7 @@ export const projects: Project[] = [
     {
         slug: "emprendimiento-familiar",
         category: "professional",
-        title: "Identidad visual — Emprendimiento familiar",
+        title: "Proyectos universitarios",
         subtitle: "Caso práctico de adaptación de marca para un negocio real.",
         year: "—",
         location: "—",
