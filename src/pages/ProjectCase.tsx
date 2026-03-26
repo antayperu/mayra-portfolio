@@ -160,7 +160,43 @@ export function ProjectCase() {
 
                 {/* Aplicaciones / Galería */}
                 <section id="piezas" className="mt-6 rounded-3xl bg-[var(--surface)] border border-[var(--border)] shadow-soft p-6 sm:p-8">
-                    <Gallery items={project.gallery} />
+                    <h2 className="text-xl font-semibold tracking-tight mb-6">Piezas y aplicaciones</h2>
+                    {project.showcaseCards ? (
+                        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                            {project.showcaseCards.map((card) => (
+                                <div
+                                    key={card.title}
+                                    className="flex flex-col gap-4 p-6 rounded-2xl border border-[var(--border)] hover:border-[#E4A001]/40 transition-colors duration-300"
+                                    style={{ background: "linear-gradient(135deg, #0D1B3E 0%, #0a1428 100%)" }}
+                                >
+                                    <div
+                                        className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+                                        style={{ background: "rgba(228,160,1,0.15)", border: "1px solid rgba(228,160,1,0.3)" }}
+                                    >
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="w-6 h-6"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="#E4A001"
+                                            strokeWidth={1.5}
+                                            aria-hidden
+                                        >
+                                            <path strokeLinecap="round" strokeLinejoin="round" d={card.icon} />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <p className="font-bold text-white text-sm leading-snug mb-2">{card.title}</p>
+                                        <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.65)" }}>
+                                            {card.description}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    ) : (
+                        <Gallery items={project.gallery} />
+                    )}
                 </section>
 
                 {/* Resultado + Aprendizajes */}
