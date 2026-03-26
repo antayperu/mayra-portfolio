@@ -4,7 +4,7 @@ import { clsx } from "../utils/clsx";
 export type GalleryItem = {
     src: string;
     alt: string;
-    ratio?: "square" | "fourThree" | "sixteenNine";
+    ratio?: "square" | "fourThree" | "sixteenNine" | "portrait";
     fit?: "cover" | "contain";
     bg?: string;
 };
@@ -15,6 +15,8 @@ const ratioClass = (r: GalleryItem["ratio"]) => {
             return "aspect-square";
         case "fourThree":
             return "aspect-[4/3]";
+        case "portrait":
+            return "aspect-[3/4]";
         case "sixteenNine":
         default:
             return "aspect-video";
@@ -34,7 +36,7 @@ export function Gallery({ items }: { items: GalleryItem[] }) {
                 Piezas y aplicaciones
             </h3>
 
-            <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className={`mt-4 grid gap-4 ${items.every(i => i.ratio === "portrait") ? "grid-cols-2 sm:grid-cols-2 lg:grid-cols-4" : "sm:grid-cols-2 lg:grid-cols-3"}`}>
                 {items.map((it, i) => (
                     <button
                         key={it.src + i}
