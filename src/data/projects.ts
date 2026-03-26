@@ -42,6 +42,83 @@ export const PROFILE = {
 };
 
 export const projects: Project[] = [
+    // UNIDOS POR GPS
+    {
+        slug: "unidos-por-gps",
+        category: "professional",
+        title: "Branding & Identidad Visual — Unidos por GPS",
+        subtitle: "Brochure corporativo para alianzas estratégicas con fabricantes de vehículos pesados.",
+        year: "2024",
+        location: "Lima, Perú",
+        role: "Diseño de identidad visual y material corporativo",
+        tags: ["Branding", "Identidad Visual", "Diseño Editorial", "Marketing B2B", "Brochure Corporativo"],
+        cover: {
+            src: "/assets/projects/unidos-por-gps/unidos-cover.jpg",
+            alt: "Portada brochure de alianzas Unidos por GPS — Alianza Estratégica en Seguridad y Cumplimiento",
+        },
+        featured: true,
+        context:
+            "Unidos por GPS es una empresa peruana con más de 13 años de experiencia en monitoreo satelital vehicular, homologada por SUTRAN para retransmisión satelital. El reto fue desarrollar una identidad visual corporativa y un brochure de alianzas estratégicas dirigido a fabricantes de vehículos pesados, comunicando su propuesta de valor diferenciada frente a competidores genéricos: respaldo regulatorio, modelo de negocio win-to-win y acompañamiento continuo.",
+        slogans: [
+            "No competimos por precio. Competimos por respaldo real.",
+            "Alianza Estratégica en Seguridad y Cumplimiento",
+        ],
+        goals: [
+            "Posicionar a Unidos por GPS como socio estratégico de alto valor frente a fabricantes de vehículos pesados.",
+            "Comunicar la homologación SUTRAN y el respaldo regulatorio (MTC, OSIPTEL, Osinergmin) como diferenciador clave.",
+            "Presentar el modelo de comisión recurrente (S/50 por instalación) de forma clara y atractiva para socios B2B.",
+            "Crear material de ventas premium que transmita confianza y profesionalismo corporativo.",
+        ],
+        deliverables: [
+            "Brochure corporativo de 5 páginas para presentación a fabricantes de vehículos pesados.",
+            "Identidad visual alineada a organismos reguladores: MTC, SUTRAN, OSIPTEL, Osinergmin.",
+            "Material de ventas para modelo win-to-win con comisión recurrente de S/50 por instalación.",
+            "Diseño editorial con paleta corporativa azul oscuro, tipografía bold y fotografía de flota vehicular.",
+        ],
+        visualSystem: {
+            palette: [
+                { name: "Azul Corporativo", hex: "#0A1628" },
+                { name: "Azul Medio", hex: "#1A3A6B" },
+                { name: "Dorado Acento", hex: "#F5C518" },
+                { name: "Blanco", hex: "#FFFFFF" },
+            ],
+            typography: {
+                primary: "Sans-serif bold",
+                notes: "Tipografía pesada y de alta legibilidad para comunicar solidez y autoridad regulatoria.",
+            },
+            rules: [
+                "Logos reguladores (MTC, SUTRAN, OSIPTEL, Osinergmin) siempre presentes para validar credibilidad.",
+                "Uso de checks visuales para listar beneficios de forma escaneable.",
+                "Fotografía de camiones y flota para conectar con la audiencia de fabricantes.",
+                "Contrastes fuertes azul oscuro / blanco para impacto en impreso y digital.",
+            ],
+        },
+        gallery: [
+            {
+                src: "/assets/projects/unidos-por-gps/unidos-about.jpg",
+                alt: "¿Quiénes somos? — +13 años de experiencia, servidor propio, homologados SUTRAN",
+                ratio: "square",
+            },
+            {
+                src: "/assets/projects/unidos-por-gps/unidos-model.jpg",
+                alt: "Modelo de comisiones — S/50 por instalación, ingreso escalable, sin inversión inicial",
+                ratio: "square",
+            },
+            {
+                src: "/assets/projects/unidos-por-gps/unidos-why.jpg",
+                alt: "¿Por qué Unidos por GPS? — Seguridad gestionada, no solo instalada",
+                ratio: "square",
+            },
+        ],
+        result:
+            "Se entregó un brochure corporativo de alto impacto visual que posiciona a Unidos por GPS como líder de categoría frente a fabricantes de vehículos pesados. El material comunica con claridad el modelo de negocio win-to-win, el respaldo regulatorio único y la propuesta de valor diferenciada, facilitando las conversaciones de alianza estratégica a nivel B2B.",
+        learnings: [
+            "En marketing B2B, la credibilidad regulatoria (logos de organismos oficiales) vale más que el diseño decorativo.",
+            "El modelo financiero debe ser el centro del mensaje: el fabricante necesita ver el ingreso potencial de inmediato.",
+            "Un brochure corporativo bien diseñado funciona como vendedor silencioso antes de cualquier reunión.",
+        ],
+    },
+
     {
         slug: "tienda-antay",
         category: "professional",
