@@ -2,27 +2,38 @@ import React from "react";
 
 export function Section({
     id,
+    marker,
     title,
     subtitle,
     children,
+    className = "",
 }: {
     id?: string;
+    marker?: string;
     title: string;
     subtitle?: string;
     children: React.ReactNode;
+    className?: string;
 }) {
     return (
-        <section id={id} className="py-14 sm:py-16">
-            <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-                <div className="max-w-2xl">
-                    <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight">{title}</h2>
+        <section id={id} className={`py-20 sm:py-28 ${className}`}>
+            <div className="mx-auto w-full max-w-6xl px-6 sm:px-8">
+                <div className="reveal mb-12 sm:mb-16">
+                    {marker && (
+                        <p className="text-xs font-semibold tracking-[0.3em] text-[var(--accent)] uppercase mb-4">
+                            {marker}
+                        </p>
+                    )}
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-normal text-[var(--text)] max-w-3xl leading-[1.05]">
+                        {title}
+                    </h2>
                     {subtitle && (
-                        <p className="mt-3 text-[15px] sm:text-base text-[var(--muted)] leading-[1.7]">
+                        <p className="mt-4 text-base sm:text-lg text-[var(--muted)] leading-relaxed max-w-2xl font-light">
                             {subtitle}
                         </p>
                     )}
                 </div>
-                <div className="mt-8">{children}</div>
+                <div>{children}</div>
             </div>
         </section>
     );

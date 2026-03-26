@@ -2,31 +2,50 @@ import { Link } from "react-router-dom";
 
 export function Footer() {
     return (
-        <footer className="border-t border-[var(--border)]">
-            <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10">
-                <div className="flex flex-col sm:flex-row gap-6 sm:items-start sm:justify-between">
+        <footer className="border-t border-[var(--border)] mt-0">
+            {/* Closing statement */}
+            <div className="mx-auto max-w-6xl px-6 sm:px-8 pt-16 pb-8">
+                <p
+                    className="text-3xl sm:text-4xl lg:text-5xl text-[var(--text)] leading-[1.15] max-w-2xl mb-16 font-normal"
+                    style={{ fontFamily: 'var(--font-display)' }}
+                >
+                    Las marcas que importan tienen una historia.{" "}
+                    <em className="text-[var(--accent)] not-italic">Ayudo a contarla.</em>
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-8 sm:items-start sm:justify-between border-t border-[var(--border)] pt-8">
+                    {/* Name */}
                     <div>
-                        <p className="font-semibold">Mayra Ortega Camacho</p>
-                        <p className="mt-2 text-sm text-[var(--muted)] leading-[1.7]">
-                            Comas, Lima – Perú · mayraoc42@gmail.com
+                        <p
+                            className="text-xl text-[var(--text)] mb-1"
+                            style={{ fontFamily: 'var(--font-display)' }}
+                        >
+                            Mayra Ortega Camacho
+                        </p>
+                        <p className="text-xs text-[var(--muted)] tracking-widest uppercase">
+                            Lima, Perú · Remote LATAM
                         </p>
                     </div>
 
-                    <div className="flex gap-6 text-sm">
-                        <Link to="/proyectos" className="hover:opacity-80 underline underline-offset-4">
+                    {/* Quick links */}
+                    <nav className="flex flex-wrap gap-x-8 gap-y-3 text-xs tracking-[0.2em] uppercase" aria-label="Links rápidos">
+                        <Link to="/" className="text-[var(--muted)] hover:text-[var(--accent)] transition-colors">
+                            Inicio
+                        </Link>
+                        <Link to="/proyectos" className="text-[var(--muted)] hover:text-[var(--accent)] transition-colors">
                             Proyectos
                         </Link>
-                        <a href="/#contacto" className="hover:opacity-80 underline underline-offset-4">
+                        <a href="/#sobre-mi" className="text-[var(--muted)] hover:text-[var(--accent)] transition-colors">
+                            Sobre mí
+                        </a>
+                        <a href="/#contacto" className="text-[var(--muted)] hover:text-[var(--accent)] transition-colors">
                             Contacto
                         </a>
-                        <a href="#top" className="hover:opacity-80 underline underline-offset-4">
-                            Volver arriba
-                        </a>
-                    </div>
+                    </nav>
                 </div>
 
-                <p className="mt-8 text-xs text-[var(--muted)]">
-                    © {new Date().getFullYear()} · Portafolio personal.
+                <p className="mt-8 text-xs text-[var(--muted)]/60 tracking-widest">
+                    © {new Date().getFullYear()} · Todos los derechos reservados.
                 </p>
             </div>
         </footer>
