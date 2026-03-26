@@ -6,6 +6,11 @@ import { Section } from "../components/Section";
 import { FEATURED, UNIVERSITY_PROJECTS, PROFILE } from "../data/projects";
 import { copyToClipboard } from "../utils/copy";
 import { useState, useEffect, useRef } from "react";
+import emailjs from "@emailjs/browser";
+
+const EMAILJS_SERVICE  = "service_pi7us1j";
+const EMAILJS_TEMPLATE = "template_9hf33d7";
+const EMAILJS_KEY      = "_affmwEPxlxylra1W";
 
 /* ─────────────────────────────────────────
    Scroll reveal hook
@@ -118,8 +123,10 @@ function SkillBar({ label, pct, delay, triggered }: { label: string; pct: number
 ───────────────────────────────────────── */
 export function Home() {
     const [copied, setCopied] = useState(false);
-    const [formState, setFormState] = useState({ name: "", company: "", message: "" });
+    const [formState, setFormState] = useState({ name: "", email: "", company: "", message: "" });
     const [formSent, setFormSent] = useState(false);
+    const [formSending, setFormSending] = useState(false);
+    const [formError, setFormError] = useState("");
 
     // Metrics trigger
     const metricsRef = useRef<HTMLDivElement>(null);
@@ -149,10 +156,30 @@ export function Home() {
         return () => io.disconnect();
     }, []);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        setFormSent(true);
-        setFormState({ name: "", company: "", message: "" });
+        setFormSending(true);
+        setFormError("");
+        try {
+            await emailjs.send(
+                EMAILJS_SERVICE,
+                EMAILJS_TEMPLATE,
+                {
+                    name:    formState.name,
+                    email:   formState.email,
+                    title:   formState.company || "Sin empresa",
+                    message: formState.message,
+                    time:    new Date().toLocaleString("es-PE", { dateStyle: "long", timeStyle: "short" }),
+                },
+                EMAILJS_KEY
+            );
+            setFormSent(true);
+            setFormState({ name: "", email: "", company: "", message: "" });
+        } catch {
+            setFormError("Hubo un error al enviar. Intenta de nuevo o escríbeme directamente.");
+        } finally {
+            setFormSending(false);
+        }
     };
 
     const skills = [
@@ -163,7 +190,7 @@ export function Home() {
         { label: "Fotografía de Producto", pct: 70 },
     ];
 
-    const tools = ["Illustrator", "InDesign", "Canva", "CapCut", "Meta Business Suite", "Google Ads", "Excel", "PowerPoint"];
+    const tools = ["Illustrator", "InDesign", "Canva", "CapCut", "Meta Business Suite", "Google Ads", "Excel", "PowerPoint", "ChatGPT", "Copilot"];
 
     const testimonials = [
         {
@@ -215,12 +242,14 @@ export function Home() {
 
                     {/* Name */}
                     <h1
-                        className="hero-name text-[clamp(3.5rem,12vw,11rem)] font-normal leading-[0.92] text-[var(--text)] tracking-tight mb-0"
+                        className="hero-name text-[clamp(2.6rem,9vw,9rem)] font-normal leading-[0.92] text-[var(--text)] tracking-tight mb-0"
                         style={{ fontFamily: 'var(--font-display)' }}
                     >
                         Mayra
                         <br />
                         <span className="text-[var(--accent)]">Ortega</span>
+                        <br />
+                        Camacho
                     </h1>
 
                     {/* Decorative line */}
@@ -531,6 +560,20 @@ export function Home() {
                                         />
                                     </div>
                                     <div>
+                                        <label htmlFor="contact-email" className="block text-xs tracking-[0.2em] uppercase text-[var(--muted)] mb-2">
+                                            Tu email *
+                                        </label>
+                                        <input
+                                            id="contact-email"
+                                            type="email"
+                                            required
+                                            value={formState.email}
+                                            onChange={(e) => setFormState((s) => ({ ...s, email: e.target.value }))}
+                                            className="w-full bg-transparent border border-[var(--border)] text-[var(--text)] px-4 py-3 text-sm focus:outline-none focus:border-[var(--accent)] transition-colors duration-200 placeholder:text-[var(--muted)]/50"
+                                            placeholder="correo@ejemplo.com"
+                                        />
+                                    </div>
+                                    <div>
                                         <label htmlFor="contact-company" className="block text-xs tracking-[0.2em] uppercase text-[var(--muted)] mb-2">
                                             Empresa / Organización
                                         </label>
@@ -557,8 +600,11 @@ export function Home() {
                                             placeholder="Cuéntame sobre tu proyecto o en qué puedo ayudarte..."
                                         />
                                     </div>
-                                    <Button type="submit" className="w-full sm:w-auto px-10">
-                                        Enviar mensaje
+                                    {formError && (
+                                        <p className="text-sm text-red-400">{formError}</p>
+                                    )}
+                                    <Button type="submit" className="w-full sm:w-auto px-10" disabled={formSending}>
+                                        {formSending ? "Enviando..." : "Enviar mensaje"}
                                     </Button>
                                 </form>
                             )}
@@ -598,7 +644,7 @@ export function Home() {
                                     </a>
 
                                     <a
-                                        href="https://www.linkedin.com/in/mayra-ortega-camacho/"
+                                        href="https://www.linkedin.com/in/mayraoc/"
                                         target="_blank"
                                         rel="noreferrer"
                                         className="flex items-center gap-4 group"
