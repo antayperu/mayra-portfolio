@@ -112,7 +112,7 @@ export const projects: Project[] = [
         },
         featured: true,
         context:
-            `Estación Antay es una cafetería ubicada en Cajatambo, provincia de Lima, que recibe turistas nacionales y extranjeros que visitan la zona serrana. Su propuesta es un ambiente acogedor y auténtico, con música acústica en vivo, que invita a detenerse y compartir. El reto fue construir una identidad visual que capturara esa experiencia — calidez, arraigo territorial y hospitalidad — para conectar con viajeros que buscan algo genuino, más allá del turismo genérico.`,
+            `Estación Antay es una cafetería ubicada en Cajatambo, provincia de Lima, que recibe turistas nacionales y extranjeros que visitan la zona andina. Su propuesta es un ambiente acogedor y auténtico, con música acústica en vivo, que invita a detenerse y compartir. El reto fue construir una identidad visual que capturara esa experiencia — calidez, arraigo territorial y hospitalidad — para conectar con viajeros que buscan algo genuino, más allá del turismo genérico.`,
         slogans: [
             `Estación Antay: “El placer de compartir”`,
             `Marca paraguas: “Donde Cajatambo se encuentra con el mundo”`,
@@ -173,8 +173,8 @@ export const projects: Project[] = [
         category: "university",
         title: "Manual de marca — IWAY",
         subtitle: "Identidad visual para robot educativo.",
-        year: "Proyecto Académico",
-        location: "UPC",
+        year: "2023",
+        location: "Lima",
         role: "Diseño de identidad y manual",
         tags: ["Branding", "Manual de Marca", "Diseño Editorial"],
         cover: {
