@@ -52,33 +52,32 @@ export const projects: Project[] = [
         slug: "unidos-por-gps",
         category: "professional",
         title: "Brochure — Unidos por GPS",
-        subtitle: "Brochure corporativo para alianzas estratégicas con fabricantes de vehículos pesados.",
-        year: "2024",
+        subtitle: "Brochure comercial para empresas de taxi — monitoreo GPS vehicular.",
+        year: "2026",
         location: "Lima, Perú",
         role: "Diseño de identidad visual y material corporativo",
-        tags: ["Branding", "Identidad Visual", "Diseño Editorial", "Marketing B2B", "Brochure Corporativo"],
+        tags: ["Branding", "Diseño Editorial", "Marketing Comercial", "Brochure", "GPS Vehicular"],
         cover: {
-            src: "/assets/projects/unidos-por-gps/unidos-cover.jpg",
-            alt: "Portada brochure de alianzas Unidos por GPS — Alianza Estratégica en Seguridad y Cumplimiento",
+            src: "/assets/projects/unidos-por-gps/taxi-p01.jpg",
+            alt: "Portada brochure Unidos por GPS — Control total para tu flota de taxis",
         },
         featured: true,
         context:
-            "Unidos por GPS es una empresa peruana con más de 13 años de experiencia en monitoreo satelital vehicular, homologada por SUTRAN para retransmisión satelital. El reto fue desarrollar una identidad visual corporativa y un brochure de alianzas estratégicas dirigido a fabricantes de vehículos pesados, comunicando su propuesta de valor diferenciada frente a competidores genéricos: respaldo regulatorio, modelo de negocio win-to-win y acompañamiento continuo.",
+            "Unidos por GPS es una empresa peruana de monitoreo satelital vehicular GPS con más de 13 años de experiencia, cobertura nacional e internacional y servidor propio. El encargo fue diseñar un brochure comercial dirigido a empresas de taxi que necesitan controlar su flota: el material debía comunicar los riesgos del negocio sin tecnología GPS, explicar cómo funciona el sistema y presentar los planes de contratación de forma clara y persuasiva.",
         slogans: [
-            "No competimos por precio. Competimos por respaldo real.",
-            "Alianza Estratégica en Seguridad y Cumplimiento",
+            "Control total para tu flota de taxis",
+            "Instalación 100% Oculta y Segura",
         ],
         goals: [
-            "Posicionar a Unidos por GPS como socio estratégico de alto valor frente a fabricantes de vehículos pesados.",
-            "Comunicar la homologación SUTRAN y el respaldo regulatorio (MTC, OSIPTEL, Osinergmin) como diferenciador clave.",
-            "Presentar el modelo de comisión recurrente (S/50 por instalación) de forma clara y atractiva para socios B2B.",
-            "Crear material de ventas premium que transmita confianza y profesionalismo corporativo.",
+            "Comunicar de forma directa los problemas que enfrentan las empresas de taxi sin GPS: robo de vehículos, conductores fuera de ruta y pérdida de productividad.",
+            "Explicar el funcionamiento del sistema en 3 pasos simples: instalación oculta, monitoreo en tiempo real y control total del vehículo.",
+            "Presentar los beneficios concretos: control de unidades, control de conductores y mayor seguridad con apagado remoto.",
+            "Mostrar los planes de precios (S/50 mensual / S/500 anual) de forma atractiva para facilitar la decisión de compra.",
         ],
         deliverables: [
-            "Brochure corporativo de 5 páginas para presentación a fabricantes de vehículos pesados.",
-            "Identidad visual alineada a organismos reguladores: MTC, SUTRAN, OSIPTEL, Osinergmin.",
-            "Material de ventas para modelo win-to-win con comisión recurrente de S/50 por instalación.",
-            "Diseño editorial con paleta corporativa azul oscuro, tipografía bold y fotografía de flota vehicular.",
+            "Brochure de 7 páginas: portada, presentación de empresa, problema del mercado, cómo funciona, beneficios, planes y precios, y contacto.",
+            "Diseño con paleta corporativa azul oscuro y dorado, tipografía bold y fotografía de flota de taxis.",
+            "Material listo para distribución digital y presentación comercial en campo.",
         ],
         gallery: [
             { src: "/assets/projects/unidos-por-gps/taxi-p01.jpg", alt: "Brochure Taxi — Página 1", ratio: "portrait", fit: "contain", bg: "#0D1B3E" },
@@ -90,19 +89,19 @@ export const projects: Project[] = [
             { src: "/assets/projects/unidos-por-gps/taxi-p07.jpg", alt: "Brochure Taxi — Página 7", ratio: "portrait", fit: "contain", bg: "#0D1B3E" },
         ],
         result:
-            "Se entregó un brochure corporativo de alto impacto visual que posiciona a Unidos por GPS como líder de categoría frente a fabricantes de vehículos pesados. El material comunica con claridad el modelo de negocio win-to-win, el respaldo regulatorio único y la propuesta de valor diferenciada, facilitando las conversaciones de alianza estratégica a nivel B2B.",
+            `Se entregó un brochure de 7 páginas que acompaña al equipo comercial en sus visitas a empresas de taxi. El material traduce la propuesta técnica en beneficios concretos para el negocio: control de flota, seguridad con apagado remoto y monitoreo 24/7. La estructura clara — problema, solución, planes y precios — facilita la comprensión y acelera la decisión del cliente.`,
         learnings: [
-            "En marketing B2B, la credibilidad regulatoria (logos de organismos oficiales) vale más que el diseño decorativo.",
-            "El modelo financiero debe ser el centro del mensaje: el fabricante necesita ver el ingreso potencial de inmediato.",
-            "Un brochure corporativo bien diseñado funciona como vendedor silencioso antes de cualquier reunión.",
+            `Para un servicio técnico como el GPS, lo más importante es mostrar el problema que resuelve antes de explicar cómo funciona.`,
+            `La estructura del brochure (problema → solución → beneficios → precio) sigue una lógica de ventas que guía naturalmente al cliente hacia la decisión.`,
+            `El diseño debe equilibrar profesionalismo corporativo con claridad visual para que cualquier empresario entienda el mensaje de un vistazo.`,
         ],
     },
 
     {
         slug: "tienda-antay",
         category: "professional",
-        title: "Identidad visual — Emprendimiento familiar",
-        subtitle: "Identidad visual y contenido para Facebook.",
+        title: "Identidad visual — Estación Antay",
+        subtitle: "Identidad visual para cafetería turística en Cajatambo.",
         year: "2021–2022",
         location: "Cajatambo, Lima — Perú",
         role: "Asistente de ventas y apoyo en marketing",
@@ -113,20 +112,20 @@ export const projects: Project[] = [
         },
         featured: true,
         context:
-            "Tienda de conveniencia familiar en Cajatambo. El reto fue construir una identidad visual que transmitiera confianza inmediata y calidez, facilitando la decisión de compra tanto en el punto de venta físico como en redes sociales.",
+            `Estación Antay es una cafetería ubicada en Cajatambo, provincia de Lima, que recibe turistas nacionales y extranjeros que visitan la zona serrana. Su propuesta es un ambiente acogedor y auténtico, con música acústica en vivo, que invita a detenerse y compartir. El reto fue construir una identidad visual que capturara esa experiencia — calidez, arraigo territorial y hospitalidad — para conectar con viajeros que buscan algo genuino, más allá del turismo genérico.`,
         slogans: [
-            "Tienda Antay: “Donde da gusto comprar”",
-            "Marca paraguas: “Donde Cajatambo se encuentra con el mundo”",
+            `Estación Antay: “El placer de compartir”`,
+            `Marca paraguas: “Donde Cajatambo se encuentra con el mundo”`,
         ],
         goals: [
-            "Profesionalizar la imagen de la tienda para generar mayor confianza local.",
-            "Crear un sistema visual replicable para ofertas y comunicados en Facebook.",
-            "Diferenciar la marca mediante un tono cercano pero con estética cuidada.",
+            `Construir una identidad de marca que refleje la experiencia única del lugar: territorio, calidez y cultura local.`,
+            `Posicionar al café como referente en Cajatambo para turistas nacionales y extranjeros.`,
+            `Desarrollar un sistema visual replicable en señalética, redes sociales y material impreso.`,
         ],
         deliverables: [
-            "Identidad visual: logo, paleta de colores, tipografías y concepto gráfico.",
-            "Plantillas y piezas para Facebook (promociones, saludos, avisos).",
-            "Edición de fotografía y video para mostrar productos con calidad.",
+            `Identidad visual: logo, paleta de colores, tipografías y concepto gráfico con identidad territorial.`,
+            `Aplicaciones de marca en materiales físicos y digitales.`,
+            `Fotografía de producto para comunicar la propuesta de valor del café.`,
         ],
         /*
         visualSystem: {
@@ -149,27 +148,24 @@ export const projects: Project[] = [
         */
         gallery: [
             {
-                src: "/assets/projects/tienda-antay-rrss.jpg",
-                alt: "Grilla de contenido para Redes Sociales",
+                src: "/assets/antay-logo.jpg",
+                alt: "Logotipo Estación Antay",
                 ratio: "square",
+                fit: "contain",
+                bg: "#000000",
             },
             {
                 src: "/assets/projects/tienda-antay-branding.png",
-                alt: "Aplicación de identidad visual en papelería y packaging",
-                ratio: "square",
-            },
-            {
-                src: "/assets/projects/tienda-antay-producto2.jpg",
-                alt: "Fotografía de producto con identidad",
+                alt: "Aplicación de identidad visual — Estación Antay",
                 ratio: "square",
             },
         ],
         result:
-            "Se logró una coherencia visual que elevó la percepción de calidad del negocio, permitiendo publicar contenido de venta de forma ágil y ordenada sin perder la identidad de marca.",
+            `Estación Antay logró posicionarse como punto de encuentro cultural en la provincia de Cajatambo. La identidad visual coherente generó reconocimiento espontáneo entre turistas y residentes locales, consolidando al café como referente de la experiencia gastronómica y cultural de la zona. La marca se convirtió en parte del paisaje del destino — algo que la gente recuerda y recomienda.`,
         learnings: [
-            "La constancia visual construye confianza más rápido que el diseño complejo.",
-            "Tener plantillas definidas ahorra tiempo y evita la improvisación.",
-            "El contenido real (fotos de tienda/productos) conecta mejor cuando tiene un marco profesional.",
+            `El branding de un negocio local debe conectar con el territorio: los elementos del lugar son el diferenciador más auténtico.`,
+            `Una identidad visual consistente construye top of mind incluso sin pauta publicitaria.`,
+            `El boca a boca se acelera cuando la marca tiene una estética que la gente quiere fotografiar y compartir.`,
         ],
     },
     {
@@ -190,7 +186,7 @@ export const projects: Project[] = [
         },
         featured: false,
         context:
-            "IWAY es un proyecto de robot educativo diseñado para facilitar el aprendizaje tecnológico. Se requería un manual de marca exhaustivo que normalizara el uso del logotipo y asegurara la consistencia en todas las aplicaciones educativas y comerciales.",
+            `Trabajo final del curso Diseño Gráfico 2 en la UPC. IWAY es un proyecto de robot educativo creado como ejercicio académico, con el objetivo de desarrollar un manual de marca completo desde cero: desde la construcción del logotipo hasta su aplicación en papelería y plataformas digitales. El proyecto buscaba demostrar el dominio de los principios de identidad corporativa y consistencia visual.`,
         goals: [
             "Desarrollar una identidad tecnológica, amigable y educativa.",
             "Documentar el uso correcto del logotipo y sus variantes.",
@@ -275,16 +271,16 @@ export const projects: Project[] = [
         },
         featured: true,
         context:
-            "Colección de proyectos académicos desarrollados durante mi formación en la Universidad Peruana de Ciencias Aplicadas (UPC). Estos trabajos demuestran habilidades en diseño editorial, branding y fotografía de producto, aplicando conceptos teóricos a casos prácticos con enfoque profesional.",
+            `Trabajos desarrollados en los cursos de Diseño Gráfico 1 y Diseño Gráfico 2 de la UPC. Incluyen proyectos de diseño editorial, fotografía de producto e identidad de marca, aplicando metodologías académicas con enfoque práctico. Cada pieza responde a un brief de curso con criterios de composición, tipografía, retícula y comunicación visual.`,
         goals: [
-            "Aplicar principios de diseño editorial en publicaciones impresas y digitales.",
-            "Desarrollar identidades visuales coherentes para productos y marcas ficticias.",
-            "Dominar técnicas de fotografía de producto y retoque digital.",
+            `Aplicar principios de diseño editorial en publicaciones impresas y digitales (Diseño Gráfico 1).`,
+            `Desarrollar identidades visuales coherentes y sistemas de marca (Diseño Gráfico 2).`,
+            `Practicar técnicas de fotografía de producto y retoque digital como parte de la producción visual.`,
         ],
         deliverables: [
-            "Revista 'Video Juego': Diseño editorial completo con portada, maquetación y sistema gráfico.",
-            "Fotografía de producto 'Chronos': Composición, iluminación y retoque profesional.",
-            "Propuestas de branding para diversos proyectos académicos.",
+            `Diseño Gráfico 1 — Revista 'Video Juego': diseño editorial con portada, maquetación y sistema gráfico.`,
+            `Diseño Gráfico 1 — Fotografía de producto 'Chronos': composición, iluminación y retoque.`,
+            `Diseño Gráfico 2 — Proyectos de identidad y aplicaciones de marca en distintos soportes.`,
         ],
         /*
         visualSystem: {
@@ -315,13 +311,20 @@ export const projects: Project[] = [
                 fit: "contain",
                 bg: "#e8f4f8",
             },
+            {
+                src: "/assets/projects/tienda-antay-producto2.jpg",
+                alt: "Fotografía de producto — Estación Antay",
+                ratio: "fourThree",
+                fit: "contain",
+                bg: "#f5f0eb",
+            },
         ],
         result:
-            "Los proyectos universitarios permitieron consolidar habilidades técnicas en diseño gráfico, editorial y fotografía de producto, preparando una base sólida para el trabajo profesional. Cada pieza refleja atención al detalle y comprensión de los principios fundamentales del diseño.",
+            `Los cursos de Diseño Gráfico 1 y 2 permitieron consolidar habilidades técnicas en diseño editorial, fotografía de producto e identidad de marca. Cada proyecto implicó aplicar una metodología de diseño completa — desde el brief hasta la pieza final — desarrollando criterio visual y atención al detalle.`,
         learnings: [
-            "El diseño editorial requiere equilibrio entre creatividad y legibilidad.",
-            "La fotografía de producto profesional combina técnica, iluminación y post-producción.",
-            "Los proyectos académicos son oportunidades para experimentar sin límites comerciales.",
+            `El diseño editorial requiere equilibrio entre creatividad, jerarquía visual y legibilidad.`,
+            `La fotografía de producto profesional combina técnica, iluminación y post-producción cuidadosa.`,
+            `Los proyectos académicos son el espacio ideal para experimentar, equivocarse y aprender con libertad.`,
         ],
     },
 

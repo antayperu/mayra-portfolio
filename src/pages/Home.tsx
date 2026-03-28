@@ -190,7 +190,7 @@ export function Home() {
         { label: "Fotografía de Producto", pct: 70 },
     ];
 
-    const tools = ["Illustrator", "InDesign", "Canva", "CapCut", "Meta Business Suite", "Google Ads", "Excel", "PowerPoint", "ChatGPT", "Copilot"];
+    const tools = ["ADOBE ILLUSTRATOR", "ADOBE INDESIGN", "Canva", "CapCut", "Meta Business Suite", "Meta Ads Manager", "Google Ads", "Google Analytics", "Mailchimp", "Hootsuite", "Excel", "ChatGPT"];
 
     const testimonials = [
         {
@@ -260,13 +260,13 @@ export function Home() {
                         className="hero-tagline text-xl sm:text-2xl lg:text-3xl text-[var(--text-secondary)] font-light max-w-2xl leading-[1.3] mb-6"
                         style={{ fontFamily: 'var(--font-display)' }}
                     >
-                        Marketing estratégico que convierte{" "}
-                        <em className="text-[var(--text)] not-italic font-normal">marcas en referentes</em>
+                        Branding, identidad visual y{" "}
+                        <em className="text-[var(--text)] not-italic font-normal">contenido con intención</em>
                     </p>
 
                     {/* Sub */}
                     <p className="hero-sub text-sm text-[var(--muted)] max-w-lg leading-relaxed mb-10">
-                        Estudiante de Comunicación y Marketing (UPC) · Especialista en branding, identidad visual y contenido digital · Disponible para empresas top
+                        Estudiante de Comunicación y Marketing (UPC) · Branding, identidad visual y contenido digital · Aprendiendo con proyectos reales
                     </p>
 
                     {/* CTAs */}
@@ -322,13 +322,13 @@ export function Home() {
                         {/* 3-line story */}
                         <div className="reveal reveal-delay-1 space-y-5">
                             <p className="text-lg sm:text-xl text-[var(--text-secondary)] leading-relaxed font-light">
-                                Soy <span className="text-[var(--text)] font-medium">Mayra Alejandra Ortega Camacho</span>, estudiante de Comunicación y Marketing en la UPC, con experiencia real construyendo sistemas visuales para negocios que necesitan comunicar con orden y propósito.
+                                Soy <span className="text-[var(--text)] font-medium">Mayra Alejandra Ortega Camacho</span>, estudiante de último ciclo de Comunicación y Marketing en la UPC, con participación en proyectos reales de branding e identidad visual para negocios locales y clientes directos.
                             </p>
                             <p className="text-lg sm:text-xl text-[var(--text-secondary)] leading-relaxed font-light">
-                                Domino el branding, la identidad visual y el contenido digital — desde el concepto hasta la pieza lista para publicar. Me formé en el ecosistema real: retail, redes sociales y campañas que tienen que funcionar, no solo verse bien.
+                                Trabajo en branding, identidad visual y contenido digital — desde el concepto hasta la pieza lista para publicar. He tenido la oportunidad de aplicar lo aprendido en entornos reales: comercio retail, redes sociales y materiales de comunicación corporativa.
                             </p>
                             <p className="text-lg sm:text-xl text-[var(--text-secondary)] leading-relaxed font-light">
-                                Mi objetivo es claro: trabajar con <span className="text-[var(--text)] font-medium">marcas que importan</span> y aportarles un marketing con estrategia, estética y resultados medibles.
+                                Busco seguir creciendo en proyectos donde el diseño y la estrategia tengan un <span className="text-[var(--text)] font-medium">propósito claro</span> — ya sea en prácticas, proyectos freelance o trabajos de colaboración.
                             </p>
                         </div>
 
@@ -386,7 +386,7 @@ export function Home() {
             <Section
                 id="proyectos"
                 marker="02 —"
-                title="Trabajo que habla por sí solo"
+                title="Casos de trabajo"
                 subtitle="Casos reales con enfoque en identidad, claridad y resultados."
                 className="bg-[var(--surface-warm)]"
             >
